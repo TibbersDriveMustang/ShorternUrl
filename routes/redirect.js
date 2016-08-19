@@ -3,13 +3,11 @@
  */
 var express = require('express');
 var router = express.Router();
-
-var bodyParser = require('body-parser');
-var jsonParser = bodyParser.json();
+var uslService = require('../services/urlService');
 
 router.get('*', function (req, res) {
     var shortUrl = req.originalUrl.slice(1);
-    var longUrl = "";
+    var longUrl = uslService.getLongUrl(shortUrl,req.app.shortToLongHash);
     res.redirect(longUrl);
 });
 
