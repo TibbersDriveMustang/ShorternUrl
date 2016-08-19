@@ -1,1 +1,1 @@
-#Long Url to Short Url
+#Url Shortener Web Service
