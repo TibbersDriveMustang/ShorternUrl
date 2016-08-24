@@ -3,7 +3,7 @@
  */
 var express = require('express');
 var router = express.Router();
-var uslService = require('../services/urlService');
+var uslService = require('./urlService');
 
 router.get('*', function (req, res) {
     var shortUrl = req.originalUrl.slice(1);

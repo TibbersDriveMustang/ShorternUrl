@@ -6,11 +6,10 @@ var app = express();
 var restRouter =  require('./routes/rest');
 var redirectRouter =  require('./routes/redirect');
 var indexRouter = require('./routes/index');
+var mongoose = require('mongoose');
 
+mongoose.connect('mongodb://admin:admin@ds013956.mlab.com:13956/urlshortener');
 
-app.longToShortHash = {};
-
-app.shortToLongHash = {};
 
 app.use('/public', express.static(__dirname + "/public"));
 

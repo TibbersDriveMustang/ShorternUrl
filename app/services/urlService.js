@@ -18,10 +18,13 @@ encode = encode.concat(genCharArray('A','Z'));
 encode = encode.concat(genCharArray('0','9'));
 encode = encode.concat(genCharArray('a','z'));
 
-var getShortUrl = function (longUrl,longToShortHash,shortToLongHash) {
+var getShortUrl = function (longUrl,callback) {
     if( longUrl.indexOf('http') === -1){
         longUrl = "http://" + longUrl;
     }
+
+
+
     if( longToShortHash[longUrl] != null){
         return longToShortHash[longUrl];
     }else{
