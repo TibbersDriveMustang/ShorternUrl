@@ -7,11 +7,11 @@ app.config(
     function ($routeProvider) {
         $routeProvider
             .when("/", {  //actually : #/
-                    templateUrl : "/public/views/home.html",
+                    templateUrl : "./public/views/home.html",
                     controller : "homeController"
             })
             .when("/urls/:shortUrl", {    // : infront indicate shortUrl is a variable
-                templateUrl : "/public/views/url.html",
+                templateUrl : "./public/views/url.html",
                 controller : "urlController"
             });
     }
