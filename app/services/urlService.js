@@ -1,7 +1,7 @@
 /**
  * Created by Tibbers on 8/13/16.
  */
-var UrlModel = require('../modules/urlModel');
+var UrlModel = require('./urlModel');
 
 var encode = [];
 
