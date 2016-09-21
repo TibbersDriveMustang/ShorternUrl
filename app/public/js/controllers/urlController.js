@@ -8,6 +8,6 @@ app.controller("urlController", ["$scope", "$http", "$routeParams", function ($s
         .success(function (data) {
             $scope.shortUrl = data.shortUrl;
             $scope.longUrl = data.longUrl;
-            $scope.shortUrlToShow = "http://localhost:3000/" + data.shortUrl;
+            $scope.shortUrlToShow = "http://localhost/" + data.shortUrl;
         });
 }]);
