@@ -11,6 +11,7 @@ var useragent = require('express-useragent');
 
 mongoose.connect('mongodb://admin:admin@ds013956.mlab.com:13956/urlshortener');
 
+app.use('/node_modules', express.static(__dirname + "/app/node_modules"));
 
 app.use('/public', express.static(__dirname + "/public"));
 

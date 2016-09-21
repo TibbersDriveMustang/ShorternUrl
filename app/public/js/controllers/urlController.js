@@ -10,4 +10,8 @@ app.controller("urlController", ["$scope", "$http", "$routeParams", function ($s
             $scope.longUrl = data.longUrl;
             $scope.shortUrlToShow = "http://localhost/" + data.shortUrl;
         });
+    $http.get("/api/v1/urls/" + $routeParams.shortUrl + "/totalClicks")
+        .success(function (data) {
+            $scope.totalClicks = data;
+        });
 }]);
