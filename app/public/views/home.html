@@ -1,9 +1,9 @@
 <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-6 col-md-offset-3"><!--offset, put col in the middle-->
         <h4>Input long Url</h4>
-        <form ng-submit="submit()">
+        <form ng-submit="submit()"><!--submit() function controlled by homeController.js-->
                 <div class="form-group">
-                    <input class="form-control" type="text" ng-model="longUrl"/>
+                    <input class="form-control" type="text" ng-model="longUrl"/><!--'longUrl' variable will be linked to homeController-->
                 </div>
                 <input type="submit" value="Get short Url" class="btn btn-primary"/>
         </form>

@@ -1,17 +1,21 @@
 /**
  * Created by Tibbers on 8/13/16.
  */
-var express = require('express');
-var router = express.Router();
 
-var bodyParser = require('body-parser');
+//RESTful API
+
+var express = require('express');
+var router = express.Router();    //Using express router
+
+var bodyParser = require('body-parser');   //npm installed 
 var jsonParser = bodyParser.json();
 var urlService = require('../services/urlService');
 var statsService = require('../services/statsService');
 
 router.post('/urls', jsonParser, function (req, res) {
     var longUrl = req.body.longUrl;
-    urlService.getShortUrl(longUrl,function (url) {   //asynchronous get url
+    //asynchronous get url
+    urlService.getShortUrl(longUrl,function (url) {
         res.json(url);
     });
 });
@@ -22,7 +26,7 @@ router.get("/urls/:shortUrl", function (req, res) {
         if(url){
             res.json(url);
         }else{
-            res.status(404).send("what????");
+            res.status(404).send("Not Found");
         }
     });
 });

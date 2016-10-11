@@ -33,6 +33,32 @@ var getUrlInfo = function (shortUrl, info, callback) {
         });
         return;
     }
+
+    var groupId = "";
+    groupId = "$" + info;
+
+    RequestModel.aggregate([
+        {
+            $match: {
+                shortUrl: shortUrl
+            }
+        },
+        {
+            $sort: {
+                timestamp: -1
+            }
+        },
+        {
+            $group: {
+                _id: groupId,
+                count:{
+                    $sum: 1
+                }
+            }
+        }
+    ], function (err, data) {
+        callback(data);
+    });
 };
 
 module.exports = {

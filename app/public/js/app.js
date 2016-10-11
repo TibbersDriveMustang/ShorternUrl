@@ -1,16 +1,23 @@
 /**
  * Created by Tibbers on 8/19/16.
  */
+//This js will handle the index.html, using ngRoute 'ngRoute', using ng-resource 'ngResource'
 var app = angular.module('Url-Shortener',['ngRoute', 'ngResource']);
 
+
+//'config()' function from ngRoute
 app.config(
+    //routeProvider from 'ngRoute'
     function ($routeProvider) {
         $routeProvider
-            .when("/", {  //actually : #/
+            //actually : #/
+            //insert the following subpage
+            .when("/", {
                     templateUrl : "./public/views/home.html",
-                    controller : "homeController"
+                    controller : "homeController"               //using this controller
             })
-            .when("/urls/:shortUrl", {    // : infront indicate shortUrl is a variable
+            // : infront indicate shortUrl is a variable
+            .when("/urls/:shortUrl", {
                 templateUrl : "./public/views/url.html",
                 controller : "urlController"
             });
