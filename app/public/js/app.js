@@ -2,7 +2,7 @@
  * Created by Tibbers on 8/19/16.
  */
 //This js will handle the index.html, using ngRoute 'ngRoute', using ng-resource 'ngResource'
-var app = angular.module('Url-Shortener',['ngRoute', 'ngResource']);
+var app = angular.module('Url-Shortener',['ngRoute', 'ngResource','chart.js']);
 
 
 //'config()' function from ngRoute
