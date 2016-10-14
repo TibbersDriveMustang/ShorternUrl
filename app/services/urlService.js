@@ -4,10 +4,11 @@
 
 //Remind to import from exact path if it is not in system path
 var UrlModel = require('../modules/urlModel');
+
 var redis = require('redis');
+//"process.env" for node.js setting environment
 var host = process.env.REDIS_PORT_6379_TCP_ADDR || '127.0.0.1';
 var port = process.env.REDIS_PORT_6379_TCP_PORT || '6379';
-
 var redisClient = redis.createClient(port, host);
 
 var encode = [];

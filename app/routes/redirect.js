@@ -15,6 +15,7 @@ router.get('*', function (req, res) {
         if(url){
             //ask browser to redirect to the given longUrl website, pay attention to "too many redirect", when url is "Undefine",that the shortUrl not exists
             res.redirect(url.longUrl);
+            //count visit time
             statsService.logRequest(shortUrl, req);
         }else{
             res.sendfile('./public/views/404.html');  //start from root

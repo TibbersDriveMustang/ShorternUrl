@@ -1,5 +1,6 @@
 /**
  * Created by Tibbers on 8/23/16.
+ * Used to store <longUrl, shortUrl> into MongoDB
  */
 var mongoos = require('mongoose');
 var Schema = mongoos.Schema;

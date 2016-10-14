@@ -19,6 +19,7 @@ app.use('/node_modules', express.static(__dirname + "/app/node_modules"));
 //If Url start with '/public', return the relative files under '/public' + /***
 app.use('/public', express.static(__dirname + "/public"));
 
+//add useragent info
 app.use(useragent.express());
 
 app.use('/api/v1', restRouter);
